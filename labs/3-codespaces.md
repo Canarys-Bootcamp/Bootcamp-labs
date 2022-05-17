@@ -1,4 +1,4 @@
-# 1.3 Creating your first Codespace
+# 3 Creating your first Codespace
 
 In this hands-on lab your will create your first GitHub Codespace and learn how you can use Codespaces to work from anywhere from a browswer as well as . If you like more background information, please refer to the [GitHub Codespaces](https://docs.github.com/en/codespaces) pages on GitHub Docs. Good luck! 👍
 
