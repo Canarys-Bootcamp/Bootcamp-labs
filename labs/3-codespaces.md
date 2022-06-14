@@ -51,7 +51,7 @@ git push
 
 ## Add devcontainer and devcontainer json file
 1. Work inside your current repository `Microsoft-Bootcamp/attendee-<your-github-handle>`
-2. Add a .devcontainer folder and .devcontainer.json in the root of your Repo
+2. Add a .devcontainer folder and devcontainer.json in the root of your Repo
 3. Click "Add File"
 4. Click "Create New File"
 5. Type or copy paste.
