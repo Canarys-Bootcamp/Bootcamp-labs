@@ -198,13 +198,11 @@ Again from the `valet` folder, we can run the following command to execute the m
 valet migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/<your-repo-name> --pipeline-id 53
 ```
 
-You will find the following results:
+You will find the following results with a NEW pull request:
   
 ```
-WARNING: `Faraday::Connection#authorization` is deprecated; it will be removed in version 2.0.                                    
-While initializing your connection, use `#request(:authorization, ...)` instead.
-See https://lostisland.github.io/faraday/middleware/authentication for more usage info.
 [2022-04-19 16:49:46] Pull request: 'https://github.com/Microsoft-Bootcamp/dkalmin-4-18-test2/pull/1' 
+```
 
-The result of the action workflow is a failing build that creates a set of artifacts that can be used to run a deployment workflow and pick up the artifacts. You can manually fix the workflow, [look at the FAQ for tips](../faq.md), or we can fix valet. The next lab will look into that.
+The result is a new PR in GitHub. The build that runs will fail. You can manually fix the workflow in the next lab. [look at the FAQ for tips](../faq.md), or we can fix valet. The next lab will look into that.
   
