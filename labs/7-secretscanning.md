@@ -33,25 +33,6 @@ Depending on your GitHub settings Secret Scanning may already be enabled. To tur
 
 Secret Scanning is now enabled for your repository. 
 
-### Managing Secret Scanning alerts
-When you navigate to the `Security` tab on your repository, and click `Secret Scanning alerts`, you can see the active alerts for Secret Scanning. Here, you can view and close alerts for secrets checked in to your repository.
-
-![Secret Scanning - Alerts](../images/secretscanningalerts.PNG)
-
-When you click on a Secret Scanning alert, you can see it's details.
-
-![Secret Scanning - Alert details](../images/secretscanningalertdetails.PNG)
-
-#### Secret Scanning: Alert notifications
-When a new secret is detected, GitHub notifies all users with access to security alerts for the repository according to their notification preferences. You will receive alerts if you are watching the repository, have enabled notifications for security alerts or for all the activity on the repository, are the author of the commit that contains the secret and are not ignoring the repository.
-
-#### Secret Scanning: Securing compromised secrets
-Once a secret has been committed to a repository, you should consider the secret compromised. GitHub recommends the following actions for compromised secrets:
-* For a compromised GitHub personal access token, delete the compromised token, create a new token, and update any services that use the old token. 
-* For all other secrets, first verify that the secret committed to GitHub is valid. If so, create a new secret, update any services that use the old secret, and then delete the old secret.
-
-For more information, please refer to: [https://docs.github.com/en/code-security/secret-scanning/managing-alerts-from-secret-scanning](https://docs.github.com/en/code-security/secret-scanning/managing-alerts-from-secret-scanning)
-
 ### Triggering Secret Scanning by inserting a connection string
 You can trigger the Secret Scanning functionality by inserting a secret in your repository yourself. To do so, try if you can manage to execute the following steps:
 * Locate the GitHub PAT you created during the Codespace exercise OR create a new PAT
