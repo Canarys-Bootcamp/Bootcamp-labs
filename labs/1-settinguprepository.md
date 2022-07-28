@@ -138,7 +138,7 @@ There is already a CODEOWNERS file in the repo that you migrated. It has the fol
 # /Documents @Microsoft-Bootcamp/reviewers
 # Create your own rules below this line without the # sign
 ```
-Now change the file so it defines the folder `/code/src/AttendeeSite/` has a team as owner. All attendees of todays technical workshop are part of a team that we set up. this team has the following naming convention: "mslabs" The full team to use: `@Microsoft-Bootcamp/mslabs`. The Team must have access to your repository, add them with "Write" permissions so they can review your code.
+Now change the file so it defines the folder `/code/src/AttendeeSite/` has a team as owner. All attendees of todays technical workshop are part of a team that we set up. this team has the following naming convention: "mslabs" The full team to use: `@Microsoft-Bootcamp/mslabs` or assign to `dkalmin`. The Team must have access to your repository, add them with "Write" permissions so they can review your code.
 
 After setting up the file, commit it to the main branch.
 Next go to the branch protection rules and for the main branch select the option `Require review from Code Owners`
