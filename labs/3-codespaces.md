@@ -36,6 +36,7 @@ Hello! From the codespace.
 3. Save the file!
 4. From the terminal run the following commands.
 ```
+cd ..
 git add *
 git commit -m  "adding from codespace"
 git push
