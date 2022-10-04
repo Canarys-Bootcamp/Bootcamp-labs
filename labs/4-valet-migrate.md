@@ -42,7 +42,7 @@ Before we move to the step where we execute the migration, you first need to gen
 ### NOTE the "]," JUST ADD THE "," TO THE LAST BRACKET "]"
 ```
   ],
-	"postCreateCommand": "docker pull ghcr.io/valet-customers/valet-cli:latest && chmod +x ./valet/valet-update && chmod +x ./valet/valet || echo 'Could not auto-build. Skipping.' "
+	"postCreateCommand": "docker pull ghcr.io/valet-customers/valet-cli:latest && chmod +x ./valet/valet-update && chmod +x ./valet/valet && gh extension install github/gh-valet || echo 'Could not auto-build. Skipping.' "
 ```
 The full `devcontainer.json` file should look like this.
 ![Screen Shot 2022-04-19 at 11 52 08 AM](https://user-images.githubusercontent.com/26442605/164075232-570059c8-568a-4a08-87e8-fa0af9bc6374.png)
