@@ -98,30 +98,23 @@ cd Valet
   
 Try to run `valet` by typing the below. 
 ```
-Valet
+gh valet
 ```
 
 It should now output the valet commands that are available:
 
 ```
-Valet commands:
-  valet audit                               # An audit will output a list of data used in a CI/CD instance.
-  valet dry-run                             # Convert a pipeline to a GitHub Actions workflow and output it's yaml file.
-  valet help [COMMAND]                      # Describe available commands or one specific command
-  valet migrate                             # Convert a pipeline to a GitHub Actions workflow and open a pull request with the changes.
-  valet upload-audit --audit-dir=AUDIT_DIR  # Upload the output of an audit for the Valet product team.
-  valet version                             # valet version
-
 Options:
-      [--allowed-actions=one two three]                                      # An allowed list of GitHub actions to map to.
-      [--allow-verified-actions], [--no-allow-verified-actions]              # Boolean value to only allow verified actions.
-      [--allow-github-created-actions], [--no-allow-github-created-actions]  # Boolean value allowing only GitHub created actions.
-      [--yaml-verbosity=YAML_VERBOSITY]                                      # YAML verbosity level.
-                                                                             # Possible values: quiet, minimal, info
-      [--custom-transformers=one two three]                                  # Paths to custom transformers.
-  o, [--output-dir=OUTPUT_DIR]                                               # The location for any output files.
-      [--credentials-file=CREDENTIALS_FILE]                                  # The file containing the credentials to use.
-      [--no-telemetry], [--no-no-telemetry]                                  # Boolean value to disallow telemetry.
+  -?, -h, --help  Show help and usage information
+
+Commands:
+  update     Update to the latest version of Valet
+  version    Check the version of the Valet docker container.
+  configure  Start an interactive prompt to configure credentials used to authenticate with your CI server(s).
+  audit      An audit will output a list of data used in a CI/CD instance.
+  dry-run    Convert a pipeline to a GitHub Actions workflow and output its yaml file.
+  migrate    Convert a pipeline to a GitHub Actions workflow and open a pull request with the changes.
+  forecast   Forecasts GitHub actions usage from historical pipeline utilization.
 ```
   
 ## Run an audit on the existing Azure DevOps project
@@ -131,19 +124,17 @@ To run Valet commands we need to pass in the arguments at each command or we can
 Add the following parameters to the file:
 NOTE: Paste in the GitHub Personal Access Token created in step 1.
 ```
-GITHUB_ACCESS_TOKEN=
+GITHUB_ACCESS_TOKEN=<your github token here>
 GITHUB_INSTANCE_URL=https://github.com
 
 AZURE_DEVOPS_PROJECT=BootcampExercises
 AZURE_DEVOPS_ORGANIZATION=microsoft-bootcamp
 AZURE_DEVOPS_INSTANCE_URL=https://dev.azure.com/microsoft-bootcamp
 ```
-
-
 Now, from the `./valet` folder in your repository, run valet to verify your Azure DevOps configuration:
   
 ```
-valet audit azure-devops --output-dir . 
+gh valet audit azure-devops --output-dir . 
 ```
 
 This will run the tool with the options you specified in the `.env.local` file.
@@ -156,13 +147,6 @@ Inspect the file `audit_summary.md` and look at the results of the audit migrati
 # Execute the migration
   
 Now we are going to migrate one of the successful pipelines. 
-For this we need to make changes to the `.env.local.` file or pass in the arguments at the command line. 
-Make changes to the `.env.local.` file and add the following parameters to the file:
-  
-```
-GITHUB_ACCESS_TOKEN=<your github token here>
-GITHUB_INSTANCE_URL=https://github.com
-```
 
 Now, we can run the command line and need to pass it the pipeline command. This command also requires to pass in a --target-url, which is the GitHub repo you are targeting. This is the location `https://github.com/Microsoft-Bootcamp/<your-repo-name>`.  
 
@@ -170,7 +154,7 @@ The Bootcamps Azure DevOps pipeline's definition-id is 54.
 
 Then, again from the `valet` folder, we can run the following command to execute the migration:
 ```
-valet migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/<your-repo-name> --pipeline-id 54
+gh valet migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/<your-repo-name> --pipeline-id 54 --output-dir ./migrate
 ```
 
 You will find the following results:
@@ -195,7 +179,7 @@ Success! The Action should run and run successfully
 ### Now lets fail a PR
 Again from the `valet` folder, we can run the following command to execute the migration:
 ```
-valet migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/<your-repo-name> --pipeline-id 53
+gh valet migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/<your-repo-name> --pipeline-id 53 --output-dir ./migrate
 ```
 
 You will find the following results with a NEW pull request:
