@@ -83,7 +83,8 @@ git push
 		"ms-vscode.azurecli",
 		"ms-azure-devops.azure-pipelines",
 		"ms-azuretools.vscode-docker",
-		"ms-vscode.powershell"
+		"ms-vscode.powershell",
+		"GitHub.copilot"
 	]
 }
 ```
