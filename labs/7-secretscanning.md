@@ -31,10 +31,10 @@ Depending on your GitHub settings Secret Scanning may already be enabled. To tur
 
 ![Secret Scanning - Enable](../images/secretscanningenable.PNG)
 
-Secret Scanning is now enabled for your repository. 
+Secret Scanning and Push Protection is now enabled for your repository. 
 
-### Triggering Secret Scanning by inserting a connection string
-You can trigger the Secret Scanning functionality by inserting a secret in your repository yourself. To do so, try if you can manage to execute the following steps:
+### Triggering Push Protection by trying to add a GitHub Token as a connection string.
+You can trigger the Secret Scanning Push Protection functionality by inserting a secret in your repository yourself. To do so, try if you can manage to execute the following steps:
 * Locate the GitHub PAT you created during the Codespace exercise OR create a new PAT
 * Go back to your code
 * Open the file `/code/src/AttendeeSite/appsettings.json`, 
@@ -53,4 +53,34 @@ You can trigger the Secret Scanning functionality by inserting a secret in your 
   "ConnectionString": "PASTE GITHUB PAT"
 }
 ```
-* Commit your changes and see whether you have been able to trigger a Secret Scanning alert (give the workflow some time to run after the commit) 
+* Try and commit your changes and see whether you will be able to. Push protection should stop the commit before it happens.
+
+### Triggering Secret Scanning by inserting a custom connection string
+* Go back to your code
+* Open the file `/code/src/AttendeeSite/appsettings.json`, 
+* At the end of the file, append the file with a `ConnectionString` element and paste the copied GitHub PAT. 
+* File should look like this
+```
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionString": "asdfasdfasdf"
+}
+```
+* Commit your changes to main.
+* Go to `Settings`
+* Go to `Code security & analysis`
+* Under `Secret Scanning` and `Custom patterns` click `New pattern`
+* Name the patter `ASDF`
+* Under `Secret format` add `asdfasdfasdf`
+* Add `asdfasdfasdf` to the `Test pattern` box
+* Click `Security & Analysis` at the top
+* click `edit` for the new custom pattern
+* scroll down and click `Publish pattern`
+* Click on the `Security` tab and view the Secret alert.
