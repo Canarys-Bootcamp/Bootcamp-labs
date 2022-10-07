@@ -20,7 +20,7 @@ We start by changing the function name to match the Azure DevOps task name `DotN
 The way you find this name is by clicking the view yaml button at a task in the pipeline:
 ![view yaml](../images/view-yaml-task.png)
 
-This results int he following code:
+This results in the following code:
 ``` ruby
 transform "DotNetCoreCLI@2" do |item|
    # your ruby code here that produces output
