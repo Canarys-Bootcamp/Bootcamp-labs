@@ -40,7 +40,7 @@ And then run a valet command line where we pass in the custom mapping like this,
 
 ```
 codespace ➜ /workspaces/attendee-demo/valet (main ✗) $
-gh valet migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/attendee-<your-github-handle> --pipeline-id <definition-id> --custom-transformers plugin/DotNetCoreCLI.rb --output-dir ./custom
+gh valet migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/attendee-<your-github-handle> --pipeline-id <definition-id> --custom-transformers plugin/DotNetCoreCLI.rb --output-dir ./migrate
 ```
 
 the output will show the following:
