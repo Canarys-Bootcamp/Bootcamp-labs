@@ -112,7 +112,7 @@ In your GitHub repo go to the settings tab and click the branches option as show
 
 Now add a new rule and define which branch you want to protect. e.g. provide the pattern name `main`
 Next you select the following options:
-1. `Require pull request reviews before merging`
+1. `Require a pull request before merging`
 2. `Do not allow bypassing the above settings`
 
 Now save this Branch Rule and see if it works.
