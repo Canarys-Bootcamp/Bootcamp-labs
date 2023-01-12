@@ -7,9 +7,10 @@ In this hands-on lab your will create your first GitHub Action Workflow and lear
 This hands on lab consists of the following steps:
 - [Creating the workflow](#creating-the-workflow)
 - [Viewing your workflow results](#viewing-your-workflow-results)
-- [If time permits: Only trigger workflow when a change is made to the website](#if-time-permits-only-trigger-workflow-when-a-change-is-made-to-the-website)
-- [If time permits: Only trigger workflow on new issue created](#if-time-permits-only-trigger-workflow-on-new-issue-created)
-- [If time permits: Create a Matrix build for release and debug](#if-time-permits-create-a-matrix-build-for-release-and-debug)
+- [Only trigger workflow when a change is made to the website](#only-trigger-workflow-when-a-change-is-made-to-the-website)
+- [Only trigger workflow on new issue created](#only-trigger-workflow-on-new-issue-created)
+- [Create a Matrix build for release and debug](#create-a-matrix-build-for-release-and-debug)
+- [If time permits Create a deployment workflow](#if-time-permits-create-a-deployment-workflow)
 
 ## Creating the workflow
 1. Work inside your current repository `Microsoft-Bootcamp/attendee-<your-github-handle>`
@@ -61,7 +62,7 @@ For example, you can see the list of files in your repository:
 ![](https://docs.github.com/assets/images/help/repository/actions-quickstart-log-detail.png)
 
 
-## If time permits: Only trigger workflow when a change is made to the website
+## Only trigger workflow when a change is made to the website
 
 See: [Workflow syntax for github actions - on push/pull - request paths.](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestpaths)
 ```
@@ -110,7 +111,7 @@ Explore-GitHub-Actions:
 ...
 ```
 
-## If time permits: Create a deployment workflow
+## If time permits Create a deployment workflow
 
 ### Create Dev Evironment
 1. On GitHub, navigate to the main page of the repository.
