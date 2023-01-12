@@ -6,6 +6,7 @@ This hands on lab consists of the following steps:
 - [Creating first codespace](#creating-first-codespace)
 - [Develop and push in a codespace](#develop-and-push-in-a-codespace)
 - [Add devcontainer and devcontainer.json file](#add-devcontainer-and-devcontainer-json-file)
+- [Customize your Codespace](#customize-your-codespace)
 
 ## Creating first codespace
 1. Work inside your current repository `Microsoft-Bootcamp/attendee-<your-github-handle>`
@@ -74,20 +75,40 @@ git push
 		"seccomp=unconfined",
 		"--privileged",
 		"--init"
-	],
-	
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"GitHub.vscode-pull-request-github",
-		"ms-vscode.azure-account",
-		"ms-vscode.azurecli",
-		"ms-azure-devops.azure-pipelines",
-		"ms-azuretools.vscode-docker",
-		"ms-vscode.powershell",
-		"GitHub.copilot"
 	]
 }
 ```
 7. Click "Commit New FIle" directly on the main branch
-8. Create a new codespace and view the added extensions
-## If time permits: Customize your worksapce
+8. Create a new codespace and verify the Codespace loads.
+9. In the VSCode terminal type `docker images`
+10. Verify the docker command succeeds.
+
+## Customize your Codespace
+
+1. Edit the `.devcontainer/devcontainer.json` file.
+2. Add the following customizations to the body of the file before the last `}`. 
+```
+    ,    
+    // Add the IDs of extensions you want installed when the container is created.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot"
+            ]
+        },
+        "codespaces": {
+            "openFiles": [
+                "codespace.md"
+            ]
+        }
+    }
+```
+3. Click Commit changes directly to the main branch.
+4. Create a new Codespace by navigating to the landing page of your repository.
+5. Click the `Code` button located in the middle of the page.
+6. Click the `Codespaces` tab on the box that pops up.
+7. Click the `Create codespaces on main` button OR click the `+` sign on the tab. This will create a new Codespace on the main branch.
+**Wait about 2 minutes for the codespace to spin itself up. Note, its a VM spinning up in the background**
+8. Verify your codespace is is running as you did above.
+9. The `codespace.md` file should show up in the VS code editor.
+10. The `copilot` extension should show up in the VS code extension list.
