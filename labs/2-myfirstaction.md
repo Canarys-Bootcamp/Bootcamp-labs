@@ -125,7 +125,7 @@ Explore-GitHub-Actions:
 ### Create Production Evironment
 1. In the left sidebar, click `Environments`
 2. Click `New Environment`
-3. In the `Name*` field type `Dev`
+3. In the `Name*` field type `Production`
 4. Click `Configure Environment`
 5. Select `Required Reviewers` checkbox
 6. Add yourself as a review
