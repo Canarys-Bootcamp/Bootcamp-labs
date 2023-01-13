@@ -39,13 +39,13 @@ Before we move to the step where we execute the migration, you first need to gen
 3. Open the `devcontainer.json` file
 4. Click `Edit`
 5. Add the below postCreateCommand to the end of the file:
-### NOTE the "]," JUST ADD THE "," TO THE LAST BRACKET "]"
+6. Add the following customizations to the body of the file before the last `}`.
 ```
-  ],
-	"postCreateCommand": "docker pull ghcr.io/valet-customers/valet-cli:latest && chmod +x ./valet/valet-update && chmod +x ./valet/valet && gh extension install github/gh-valet || echo 'Could not auto-build. Skipping.' "
+  ,
+	"postCreateCommand": "docker pull ghcr.io/valet-customers/valet-cli:latest && gh extension install github/gh-valet || echo 'Could not auto-build. Skipping.' "
 ```
 The full `devcontainer.json` file should look like this.
-![Screen Shot 2022-04-19 at 11 52 08 AM](https://user-images.githubusercontent.com/26442605/164075232-570059c8-568a-4a08-87e8-fa0af9bc6374.png)
+![Screen Shot 2023-01-12 at 5 24 13 PM](https://user-images.githubusercontent.com/26442605/212215686-1910550a-a5ed-4d6c-9714-003894702913.png)
 
 
 ## Setting up your CodeSpaces development environment
