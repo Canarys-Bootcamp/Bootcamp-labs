@@ -1,4 +1,4 @@
-# 3.1 Code with Copilot and Codespaces
+# 4 Code with Copilot and Codespaces
 
 In this hands-on lab you will use Codespaces and Copilot to utilize the benefits that Copilot gives to developers writing code. Good luck! 👍
 

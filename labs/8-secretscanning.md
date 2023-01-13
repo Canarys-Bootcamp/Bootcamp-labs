@@ -1,4 +1,4 @@
-# 7 Setting up Secret Scanning for your repository
+# 8 Setting up Secret Scanning for your repository
 In this lab you will:
  - Learn how to enable secret scanning
  - Experience how secret scanning scans your repository for known types of secrets

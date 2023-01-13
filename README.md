@@ -8,11 +8,12 @@ Exercises
 - Exercise 1: [Migrating your repository from Azure DevOps to GitHub](/labs/1-settinguprepository.md)
 - Exercise 2: [Creating your first Action Workflow](/labs/2-myfirstaction.md)
 - Exercise 3: [Codespaces](/labs/3-codespaces.md)
-- Exercise 4: [Valet Migration](/labs/4-valet-migrate.md)
-- Exercise 5: [Valet Custom Mappings](/labs/5-custom-mappings.md)
-- Exercise 6: [Dependabot](/labs/6-dependabot.md)
-- Exercise 7: [Secret Scanning](/labs/7-secretscanning.md)
-- Exercise 8: [Code scanning](/labs/8-codescanning.md)
+- Exercise 4: [Copilot](/labs/4-copilot.md)
+- Exercise 5: [GAI Migration](/labs/5-gai-migrate.md)
+- Exercise 6: [GAI Custom Mappings](/labs/6-custom-mappings.md)
+- Exercise 7: [Dependabot](/labs/7-dependabot.md)
+- Exercise 8: [Secret Scanning](/labs/8-secretscanning.md)
+- Exercise 9: [Code scanning](/labs/9-codescanning.md)
 
 
 Running into an issue? Errors popping up? We have documented some of the issues that you can run into and ways to solve them, please see [FAQ](faq.md).

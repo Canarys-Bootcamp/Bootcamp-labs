@@ -1,4 +1,4 @@
-# 5 Creating a custom mapping to override the default behavior or non existing mappings
+# 6 Creating a custom mapping to override the default behavior or non existing mappings
 In this hands on lab, you will learn to create a custom plugin that transforms some of the existing migration mapping and replace it by your own mapping. 
 For this you need to start coding in Ruby. 
 > Useful links on Ruby: [https://www.ruby-lang.org/en/](https://www.ruby-lang.org/en/) and [https://ruby-doc.org/](https://ruby-doc.org/).

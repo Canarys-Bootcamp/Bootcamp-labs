@@ -1,4 +1,4 @@
-# 6 Enabling and using Dependabot on your repository
+# 7 Enabling and using Dependabot on your repository
 The hands-on lab has the goal to learn you how to enable the Dependency and Dependabot features and gain hands-on experience with Dependatbot's ability to update your dependencies automatically.
 
 This hands on lab consists of the following steps:

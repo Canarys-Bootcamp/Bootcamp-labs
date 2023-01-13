@@ -1,4 +1,4 @@
-# 4 Migrating pipelines from Azure DevOps to GitHub Actions using GitHub Actions Importer 
+# 5 Migrating pipelines from Azure DevOps to GitHub Actions using GitHub Actions Importer 
 In this hands-on lab you will get a first glance at the tooling that is build to migrate CI/CD solutions to GitHub actions. This tool is called **GitHub Actions Importer (GAI)**.
 
 We will start with setting up the tools, use the tools for a dry-run and do a migration of one pipeline to Azure DevOps to get a feel on how the tools work.
