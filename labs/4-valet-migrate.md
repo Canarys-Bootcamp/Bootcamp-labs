@@ -1,5 +1,5 @@
-# 4 Migrating pipelines from Azure DevOps to GitHub Actions using Valet 
-In this hands-on lab you will get a first glance at the tooling that is build to migrate CI/CD solutions to GitHub actions. This tool is called **Valet**.
+# 4 Migrating pipelines from Azure DevOps to GitHub Actions using GitHub Actions Importer 
+In this hands-on lab you will get a first glance at the tooling that is build to migrate CI/CD solutions to GitHub actions. This tool is called **GitHub Actions Importer (GAI)**.
 
 We will start with setting up the tools, use the tools for a dry-run and do a migration of one pipeline to Azure DevOps to get a feel on how the tools work.
 
@@ -42,7 +42,7 @@ Before we move to the step where we execute the migration, you first need to gen
 6. Add the following customizations to the body of the file before the last `}`.
 ```
   ,
-	"postCreateCommand": "docker pull ghcr.io/valet-customers/valet-cli:latest && gh extension install github/gh-valet || echo 'Could not auto-build. Skipping.' "
+	"postCreateCommand": "docker pull ghcr.io/valet-customers/valet-cli:latest && gh extension install github/gh-actions-importer || echo 'Could not auto-build. Skipping.' "
 ```
 The full `devcontainer.json` file should look like this.
 ![Screen Shot 2023-01-12 at 5 24 13 PM](https://user-images.githubusercontent.com/26442605/212215686-1910550a-a5ed-4d6c-9714-003894702913.png)
@@ -55,17 +55,13 @@ Now before we continue the hands-on lab, go to your repository and start your Co
 
 ### Please wait for this to complete. The reason it takes some more time the first time has to do with the fact the container needs to be build for the first time. Next time you start a Codespace you will get access in a few seconds.
 
-## Valet is already added to Codespaces development environment
+## GAI is already added to Codespaces development environment
 
-Valet uses a Docker container to do all the work. This container is available the moment you are onboarded to Valet.
-Valet consist primarily out of two things we need to setup before we can do some work:
-
-- A Docker image that we need on our machine
-- A script `valet`, that drives the use of the Docker container on our workstation.
+GAI uses a Docker container to do all the work. This container is available the moment you are onboarded to GAI.
 
 Let us get started by setting up the tools so they work.
 
-### Verify image for Valet
+### Verify image for GAI
 
 In the terminal window in your Codespace environment (or in Visual Studio Code if you prefer to use that)
 type at the command-line:
@@ -96,9 +92,9 @@ In your terminal, change directory to the folder `valet` on your local repo in y
 cd Valet
 ```
   
-Try to run `valet` by typing the below. 
+Try to run `actions-importer` by typing the below. 
 ```
-gh valet
+gh actions-importer
 ```
 
 It should now output the valet commands that are available:
@@ -108,8 +104,8 @@ Options:
   -?, -h, --help  Show help and usage information
 
 Commands:
-  update     Update to the latest version of Valet
-  version    Check the version of the Valet docker container.
+  update     Update to the latest version of actions-importer
+  version    Check the version of the actions-importer docker container.
   configure  Start an interactive prompt to configure credentials used to authenticate with your CI server(s).
   audit      An audit will output a list of data used in a CI/CD instance.
   dry-run    Convert a pipeline to a GitHub Actions workflow and output its yaml file.
@@ -119,7 +115,7 @@ Commands:
   
 ## Run an audit on the existing Azure DevOps project
   
-To run Valet commands we need to pass in the arguments at each command or we can set up a file called `.env.local`. We provided this file already in the Valet folder. It is most convenient to use this file and only fill in the missing details for Azure DevOps and for GitHub. 
+To run actions-importer commands we need to pass in the arguments at each command or we can set up a file called `.env.local`. We provided this file already in the Valet folder. It is most convenient to use this file and only fill in the missing details for Azure DevOps and for GitHub. 
   
 Add the following parameters to the file:
 NOTE: Paste in the GitHub Personal Access Token created in step 1.
@@ -131,10 +127,10 @@ AZURE_DEVOPS_PROJECT=BootcampExercises
 AZURE_DEVOPS_ORGANIZATION=microsoft-bootcamp
 AZURE_DEVOPS_INSTANCE_URL=https://dev.azure.com/microsoft-bootcamp
 ```
-Now, from the `./valet` folder in your repository, run valet to verify your Azure DevOps configuration:
+Now, from the `./valet` folder in your repository, run actions-importer to verify your Azure DevOps configuration:
   
 ```
-gh valet audit azure-devops --output-dir . 
+gh actions-importer audit azure-devops --output-dir . 
 ```
 
 This will run the tool with the options you specified in the `.env.local` file.
@@ -154,7 +150,7 @@ The Bootcamps Azure DevOps pipeline's definition-id is 54.
 
 Then, again from the `valet` folder, we can run the following command to execute the migration:
 ```
-gh valet migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/<your-repo-name> --pipeline-id 54 --output-dir ./migrate
+gh actions-importer migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/<your-repo-name> --pipeline-id 54 --output-dir ./migrate
 ```
 
 You will find the following results:
@@ -179,7 +175,7 @@ Success! The Action should run and run successfully
 ### Now lets fail a PR
 Again from the `valet` folder, we can run the following command to execute the migration:
 ```
-gh valet migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/<your-repo-name> --pipeline-id 53 --output-dir ./migrate
+gh actions-importer migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/<your-repo-name> --pipeline-id 53 --output-dir ./migrate
 ```
 
 You will find the following results with a NEW pull request:
@@ -188,5 +184,5 @@ You will find the following results with a NEW pull request:
 [2022-04-19 16:49:46] Pull request: 'https://github.com/Microsoft-Bootcamp/dkalmin-4-18-test2/pull/1' 
 ```
 
-The result is a new PR in GitHub. The build that runs will fail. You can manually fix the workflow in the next lab. [look at the FAQ for tips](../faq.md), or we can fix valet. The next lab will look into that.
+The result is a new PR in GitHub. The build that runs will fail. You can manually fix the workflow in the next lab. [look at the FAQ for tips](../faq.md), or we can fix actions-importer. The next lab will look into that.
   
