@@ -36,16 +36,16 @@ transform "DotNetCoreCLI@2" do |item|
   end
 ```  
    
-And then run a valet command line where we pass in the custom mapping like this, be sure to replace the path to the repo and the pipeline-id:
+And then run a actions-importer command line where we pass in the custom mapping like this, be sure to replace the path to the repo and the pipeline-id:
 
 ```
-codespace ➜ /workspaces/attendee-demo/valet (main ✗) $
-gh valet migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/attendee-<your-github-handle> --pipeline-id <definition-id> --custom-transformers plugin/DotNetCoreCLI.rb --output-dir ./migrate
+codespace ➜ /workspaces/attendee-demo/actions-importer (main ✗) $
+gh actions-importer migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/attendee-<your-github-handle> --pipeline-id <definition-id> --custom-transformers plugin/DotNetCoreCLI.rb --output-dir ./migrate
 ```
 
 the output will show the following:
 <pre> 
-[2021-09-14 21:40:04] Logs: 'log/valet-20210914-214004.log'                                                                     
+[2021-09-14 21:40:04] Logs: 'log/actions-importer-20210914-214004.log'                                                                     
 WARNING: `Faraday::Connection#basic_auth` is deprecated; it will be removed in version 2.0.                                     
 While initializing your connection, use `#request(:basic_auth, ...)` instead.
 See https://lostisland.github.io/faraday/middleware/authentication for more usage info.<b>
