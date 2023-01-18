@@ -45,15 +45,16 @@ The example `dependabot.yml` file below changes the npm configuration so that al
 version: 2
 updates:
   # Keep npm dependencies up to date
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: "nuget"
+    directory: "/code/"
     schedule:
       interval: "daily"
     # Raise all npm pull requests with reviewers
+    # Enter your GitHub username
     reviewers:
-      - "my-org/team-name"
-      - "octocat"
+      - "user-name"
     # Raise all npm pull requests with an assignee
+     # Enter your GitHub username
     assignees:
       - "user-name"
 ```
