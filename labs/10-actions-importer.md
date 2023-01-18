@@ -2,22 +2,22 @@
 In this hands-on lab you will get a first glance at the tooling that is build to migrate CI/CD solutions to GitHub actions. This tool is called **GitHub Actions Importer (GAI)**.
 
 This hands on lab consists of the following steps:
-- [Add Personal Access Tokens To Codespaces](add-personal-access-tokens-to-codespaces)
-- [Bootstrap GitHub Actions Importer into your Codespace](#bootstrap-gitHub-actions-importer-into-your-codespace)
+- [Add Personal Access Tokens To Codespaces](#add-personal-access-tokens-to-codespaces)
+- [Bootstrap GitHub Actions Importer into your Codespace](#bootstrap-github-actions-importer-into-your-codespace)
 - [Generate GitHub a Personal Access Token](#generate-a-github-personal-access-token)
 - [Configure Actions Importer](#configure-actions-importer)
 - [Verify your environment](#verify-your-environment)
 - [Run an audit on the existing Azure DevOps project](#run-an-audit-on-the-existing-azure-devops-project)
 
 ## Add Personal Access Tokens To Codespaces
-### Add Azure DevOps Secret
-2. Work inside your current repository `Microsoft-Bootcamp/attendee-<your-github-handle>`
-3. Click the `Settings` tab
-4. Click `Secrets` then `Codespaces`
-5. Click `New Repository Secret`
-6. In the Name field type `AZURE_DEVOPS_ACCESS_TOKEN`
-7. Paste in **ASK INSTRUCTOR**
-8. Click `Add Secret`
+1. Work inside your current repository `Microsoft-Bootcamp/attendee-<your-github-handle>`
+2. Click the `Settings` tab
+3. Click `Secrets` then `Codespaces`
+4. Click `New Repository Secret`
+5. In the Name field type `AZURE_DEVOPS_ACCESS_TOKEN`
+6. Paste in **ASK INSTRUCTOR**
+7. Click `Add Secret`
+
 
 ## Bootstrap GitHub Actions Importer into your Codespace
 1. Work inside your current repository `Microsoft-Bootcamp/attendee-<your-github-handle>`
