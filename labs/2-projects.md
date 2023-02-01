@@ -1,4 +1,4 @@
-# 1.1 Create a Project and a Sprint!
+# 2 Create a Project and a Sprint!
 
 In this hands-on lab you will use GitHub's new Project experience to create a project to track issues and set up an agile style iterative process using sprints. Good luck! 👍
 

@@ -1,4 +1,4 @@
-# 3 Creating your first Codespace
+# 4 Creating your first Codespace
 
 In this hands-on lab your will create your first GitHub Codespace and learn how you can use Codespaces to work from anywhere from a browswer as well as . If you like more background information, please refer to the [GitHub Codespaces](https://docs.github.com/en/codespaces) pages on GitHub Docs. Good luck! 👍
 
@@ -66,16 +66,10 @@ git push
   "name": "Codespace to bootstrap valet in a Codespace",
   //Use base codespace image then pull Valet on postCreateCommand,  
   "image": "mcr.microsoft.com/vscode/devcontainers/universal:linux",
-  "remoteUser": "codespace",
-	"overrideCommand": false,
-	"mounts": ["source=codespaces-linux-var-lib-docker,target=/var/lib/docker,type=volume"],
-	"runArgs": [
-		"--cap-add=SYS_PTRACE",
-		"--security-opt",
-		"seccomp=unconfined",
-		"--privileged",
-		"--init"
-	]
+  "remoteEnv": {
+    "DOCKER_ARGS": "--network=host",
+    "INSTALLATION_TYPE": "labs"
+  }
 }
 ```
 7. Click "Commit New FIle" directly on the main branch

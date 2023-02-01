@@ -5,7 +5,6 @@ This hands on lab consists of the following steps:
 - [Migrating your repository from Azure DevOps](#11-migrating-your-repository-from-azure-devops)
   - [Acquire the Azure DevOps Git repository URI](#acquire-the-azure-devops-git-repository-uri)
   - [Import the repository](#import-the-repository)
-  - [Clone the repository - Using command line](#clone-the-repository---using-command-line)
   - [Import the repository - Using GUI](#import-the-repository---using-gui)
 - [Create a Branch Rule](#create-a-branch-rule)
 - [If time permits: enforce CODEOWNERS review](#if-time-permits-enforce-codeowners-review)
@@ -26,59 +25,7 @@ Start with retrieving the Clone URL of the Azure DevOps repository you want to m
 
 ## Import the repository
 Next, we'll import the Azure DevOps repository in your GitHub repository. There are two ways to achieve this, you'll use one of both: 
-1. [Clone the repository  - Using command line](#clone-the-repository---using-command-line)
 2. [Import the repository - Using GUI](#import-the-repository---using-gui)
-
-**We've noticed during previous deliveries of the Technical Bootcamp, that not all participants could perform the import using GUI due to missing the 'Import Code' button in their repository. Therefore, we'll import the repository using the command line. However, we wanted to show you how you can import a repository without the command line. Feel free to use this method, should you prefer this method and the option is available for you.**
-
-## Clone the repository - Using command line
-In this step, you clone the repository locally, then push it into GitHub. This requires the Git client, which you can [download here](https://git-scm.com/download/gui/windows).
-
-Start a command prompt and move to a location where you want to clone the repo on your machine, e.g. `c:\sources`. 
-
-Enter the following command 
-
-```
-git clone --mirror [PASTE_AZURE_DEVOPS_REPO_URL_HERE] 
-```
-
-Now we have a cloned repository with the full history on your local drive. Next, we want to move this repo with the history to the GitHub repo that is available for you.
-You should have access to a GitHub Repo in the organization https://github.com/Microsoft-Bootcamp. This repo has the name `attendee-<your-github-handle>`
-
-Now, we'll change the remote to your GitHub repository. To achieve this, you use the command 
-
-```
-cd BootcampExercises.git
-git remote add github {your clone url}
-```
-
-So, your command would look something like `git remote add github https://github.com/Microsoft-Bootcamp/attendee-<your-github-handle>.git`
-
-Now we are ready to push the complete repo, including it's history, branches and tags to the GitHub repo.
-For this you can use the command:
-
-```
-git push --mirror github
-```
-
-> NOTE: In case you had already initialized your repo over on GitHub, you can force the code into the repo by adding `-f`. **This will overwrite your repository and its contents!**
-> 
-> ```
-> git push --mirror -f github
-> ```
-
-The repository is now migrated from Azure DevOps to GitHub with full history. In the next part of the bootcamp, we'll look at what is migrated, and what we are missing after the migration.
-
-As you may have noticed the mirror clone did not contain a working folder with the main branch checked out. If you want to have a local working copy, you'll have to create a new clone that isn't a bare/mirror-clone. The simplest solution in our case is to simply delete the `TailwindTraders-Website.git` directory and clone the repository again:
-
-```
-git clone https://github.com/Microsoft-Bootcamp/attendee-<your-github-handle>.git
-```
-
-You can now skip directly to [Create a Branch Rule](#create-a-branch-rule).
-
-## Import the repository - Using GUI
->**Note: This section is purely informational. If you have already cloned your repository using the steps above, skip this section because this functionality is only available in a completely empty repository. This section describes how you can import the Azure DevOps repository into your GitHub repository using GUI with the Import Code functionality. Note that during previous deliveries of this Technical Bootcamp, we found that not all attendees were able to use this functionality. Therefore, this might not work for you. If this is the case, perform the import using the steps documented: [Clone the repository  - Using command line](#clone-the-repository---using-command-line).
 
 Navigate to your repository on GitHub, it should still be completely empty and offer the ability to "Import Code" at the bottom of the page:
 
