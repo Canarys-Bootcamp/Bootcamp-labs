@@ -63,8 +63,8 @@ git push
 6. In the body of the file paste the following.
 ```
 {
-  "name": "Codespace to bootstrap valet in a Codespace",
-  //Use base codespace image then pull Valet on postCreateCommand,  
+  "name": "Codespace to bootstrap GitHub Action Importer in a Codespace",
+  //Use base codespace image then pull GitHub Action Importer on postCreateCommand,  
   "image": "mcr.microsoft.com/vscode/devcontainers/universal:linux",
   "remoteEnv": {
     "DOCKER_ARGS": "--network=host",
