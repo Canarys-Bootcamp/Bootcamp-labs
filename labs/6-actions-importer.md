@@ -1,5 +1,5 @@
 # 6 Migrating pipelines from Azure DevOps to GitHub Actions using GitHub Actions Importer 
-In this hands-on lab you will get a first glance at the tooling that is build to migrate CI/CD solutions to GitHub actions. This tool is called **GitHub Actions Importer (GAI)**.
+In this hands-on lab you will get a glance at the tooling that is built to migrate CI/CD solutions to GitHub actions. This tool is called **GitHub Actions Importer (GAI)**.
 
 This hands on lab consists of the following steps:
 - [Add Personal Access Tokens To Codespaces](#add-personal-access-tokens-to-codespaces)
@@ -10,6 +10,7 @@ This hands on lab consists of the following steps:
 - [Run an audit on the existing Azure DevOps project](#run-an-audit-on-the-existing-azure-devops-project)
 - [Execute the migration](#execute-the-migration)
 - [If time permits create a custom mapping](#if-time-permits-create-a-custom-mapping)
+- [Continue learning GitHub Actions Importer](#continue-learning-github-actions-importer)
 
 
 ## Add Personal Access Tokens To Codespaces
@@ -162,8 +163,10 @@ Merge the pull request and run the workflow manually.
 
 Success! The Action should run and run successfully
 
-### Now lets fail a PR
-Run the following command to execute the migration:
+### If time permits create a custom mapping
+
+#### Lets fail a PR
+Run the following command to execute the migration on a pipeline that will fail on the PR checks build run:
 ```
 gh actions-importer migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/<your-repo-name> --pipeline-id 53 --output-dir ./migrate
 ```
@@ -175,7 +178,6 @@ You will find the following results with a NEW pull request:
 ```
 The result is a new PR in GitHub. The build that runs will fail. You can manually fix the workflow in the next activity.
 
-### If time permits create a custom mapping
 In this activity, you will learn to create a custom plugin that transforms some of the existing migration mapping and replace it by your own mapping. 
 For this you need to start coding in Ruby. 
 > Useful links on Ruby: [https://www.ruby-lang.org/en/](https://www.ruby-lang.org/en/) and [https://ruby-doc.org/](https://ruby-doc.org/).
@@ -204,8 +206,6 @@ transform "DotNetCoreCLI@2" do |item|
 The parameter item is a collection of items than contain the properties of the original task that was retrieved from Azure DevOps.
 In our case we can see in the yaml the properties that are set are e.g. `command` and `projects`.
 
-Now lets see how we can change the output that now defaults to the use of the run command.
-
 Lets make a code change to the ruby file and change it to this:
 ``` Ruby
 transform "DotNetCoreCLI@2" do |item|
@@ -227,4 +227,18 @@ transform "DotNetCoreCLI@2" do |item|
     }
 end
 ```
-Run the transformation again and pass it the custom plugin. Look at the result and see if this results in a build that succeeds. 
+And then run the actions-importer command line where we pass in the custom mapping like this, be sure to replace the path to the repo:
+```
+gh actions-importer migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/<your-repo-name> --pipeline-id 53 --custom-transformers plugin/DotNetCoreCLI.rb --output-dir ./migrate
+```
+Navigate to the new pull reguest generated in your GitHub repository. The build check will now run successfully and you can merge the PR!
+
+### Continue learning GitHub Actions Importer
+Attending this GitHub Technical Bootcamp means that you have been granted access to the GitHub Access Importer cli for use going forward. To learn more about the additional features and CI/CD providers supported from the GAI please visit the [GitHub Actions Importer labs](https://github.com/actions/importer-labs). 
+
+The GitHub Actions Importer labs is an open source repository that will guide you through the following migration scenarios:
+- [Migrating from Azure DevOps to GitHub Actions](https://github.com/actions/importer-labs/blob/main/azure_devops/readme.md)
+- [Migrating from CircleCI to GitHub Actions](https://github.com/actions/importer-labs/blob/main/circle_ci/readme.md)
+- [Migrating from GitLab to GitHub Actions](https://github.com/actions/importer-labs/blob/main/gitlab/readme.md)
+- [Migrating from Jenkins to GitHub Actions](https://github.com/actions/importer-labs/blob/main/jenkins/readme.md)
+- [Migrating from Travis CI to GitHub Actions](https://github.com/actions/importer-labs/blob/main/travis/readme.md)
