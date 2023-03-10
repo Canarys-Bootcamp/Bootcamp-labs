@@ -28,7 +28,7 @@ This hands on lab consists of the following steps:
 4. Select `New project`.
 5. Click `New project`.
 6. The `Select a template` dialog appears. 
-7. Under `Project name` type your GitHub handle and then `my first project`. The title will look like `@dkalmin my first project`.
+7. Under `Project name` type your GitHub handle and then `my first project`. The title will look like `@<your-handle> my first project`.
 8. Verify `Table` is slected and click `Create`.
 9. Click `Add item from repository`.
 10. Select your repository from the drop-down list.
