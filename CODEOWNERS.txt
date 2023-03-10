@@ -1,2 +1,0 @@
-# Any change in this repo requires approval from the workshop owners
-* @Microsoft-Bootcamp/workshopowners
