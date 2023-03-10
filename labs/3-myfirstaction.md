@@ -5,12 +5,18 @@ In this hands-on lab your will create your first GitHub Action Workflow and lear
 > Before you start with this lab, please remove the branch rule, so you can commit to the main branch without a pull request to speed up the process :smirk:
 
 This hands on lab consists of the following steps:
+- [Enabling Actions](#enabling-github-actions)
 - [Creating the workflow](#creating-the-workflow)
 - [Viewing your workflow results](#viewing-your-workflow-results)
 - [Only trigger workflow when a change is made to the website](#only-trigger-workflow-when-a-change-is-made-to-the-website)
 - [Only trigger workflow on new issue created](#only-trigger-workflow-on-new-issue-created)
 - [Create a Matrix build for release and debug](#create-a-matrix-build-for-release-and-debug)
 - [If time permits Create a deployment workflow](#if-time-permits-create-a-deployment-workflow)
+
+## Enabling Github Actions
+1. Work inside your current repository `Microsoft-Bootcamp/attendee-<your-github-handle>`
+2. Go to Settings -> Actions -> General
+3. Check 'Allow all actions and reusable workflows', and click save
 
 ## Creating the workflow
 1. Work inside your current repository `Microsoft-Bootcamp/attendee-<your-github-handle>`
