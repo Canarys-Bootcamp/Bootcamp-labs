@@ -141,7 +141,7 @@ Explore-GitHub-Actions:
 1. On GitHub, navigate to the main page of the repository.
 2. Select `Actions`
 3. Select `New Workflow`
-4. Select `Set up a worflow yourself`
+4. Select `Set up a workflow yourself`
 5. Name the file `deploy.yml`
 6. Paste in the following code:
 ```
