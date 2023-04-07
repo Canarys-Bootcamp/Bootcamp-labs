@@ -143,7 +143,7 @@ Explore-GitHub-Actions:
 3. Select `New Workflow`
 4. Select `Set up a worflow yourself`
 5. Name the file `deploy.yml`
-6. Paste in the folling code:
+6. Paste in the following code:
 ```
 ###################################################################
 #Deploy action
