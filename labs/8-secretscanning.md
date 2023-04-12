@@ -84,3 +84,12 @@ You can trigger the Secret Scanning Push Protection functionality by inserting a
 * click `edit` for the new custom pattern
 * scroll down and click `Publish pattern`
 * Click on the `Security` tab and view the Secret alert.
+
+### Fix the Security Alert
+* Go back to your landing page of your repositry
+* Select the `Security` tab at the top
+* Click on your Secret alert
+* View the alert
+* Select `False Positive` to turn alert off.
+*
+
