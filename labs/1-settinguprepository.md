@@ -41,12 +41,6 @@ GitHub will now automatically import and optimize the repository and should fini
 
 ![Import Code - Finished](../images/import-code-finished.png)
 
-Now clone your repository to your local machine with the CLI or with your favorite git client:
-
-```
-git clone https://github.com/Microsoft-Bootcamp/attendee-<your-github-handle>.git
-```
-
 You can now skip directly to [Create a Branch Rule](#create-a-branch-rule).
 
 # Create a Branch Rule
