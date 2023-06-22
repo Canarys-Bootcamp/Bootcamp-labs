@@ -74,8 +74,6 @@ git push
 ```
 7. Click "Commit New FIle" directly on the main branch
 8. Create a new codespace and verify the Codespace loads.
-9. In the VSCode terminal type `docker images`
-10. Verify the docker command succeeds.
 
 ## Customize your Codespace
 
