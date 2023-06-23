@@ -33,7 +33,6 @@ This hands on lab consists of the following steps:
 {
   "name": "Codespace to perform GitHub Actions Importer Labs",
   "remoteEnv": {
-    "DOCKER_ARGS": "--network=host",
     "INSTALLATION_TYPE": "labs"
   },
   "hostRequirements": {
@@ -66,12 +65,10 @@ This hands on lab consists of the following steps:
       - Select the `TERMINAL` tab from within the codespace terminal.
       - Run the following command: `gh actions-importer configure`.
       - Use the down arrow key to highlight `Azure DevOps`, press the spacebar to select, and then press enter to continue.
-      - At the GitHub handle prompt, enter YOUR GitHub handle press enter.
-      - At the GitHub Container Registry prompt, enter the GitHub PAT generated in step 3 and press enter.
-      - At the GitHub PAT prompt, enter the GitHub PAT generated in step 3 and press enter.
+      - At the GitHub Personal Access Token prompt, enter the GitHub PAT generated in step 3 and press enter.
       - At the GitHub URL prompt, enter the GitHub instance URL or press enter to accept the default value (`https://github.com`).
       - At the Azure DevOps token prompt, ASK INSTRUCTOR FOR Azure DevOps Access token, paste it in and press enter.
-      - At the Azure DevOps URL prompt, enter your Azure DevOps URL or press enter to accept the default value (`https://dev.azure.com`).
+   - At the Azure DevOps URL prompt, enter your Azure DevOps URL or press enter to accept the default value (`https://dev.azure.com`).
       - At the prompt, enter your Azure DevOps organization name of `microsoft-bootcamp` and press enter.
       - At the prompt, enter your Azure DevOps project name of `BootcampExercises`. and press enter.
 
@@ -80,7 +77,6 @@ This hands on lab consists of the following steps:
          ✔ Which CI providers are you configuring?: Azure DevOps
          Enter the following values (leave empty to omit):
          ✔ GitHub handle used to authenticate with the GitHub Container Registry: mona
-         ✔ Personal access token to authenticate with the GitHub Container Registry: ***************
          ✔ Personal access token for GitHub: ***************
          ✔ Base url of the GitHub instance: https://github.com
          ✔ Personal access token for Azure DevOps: ***************
@@ -104,11 +100,8 @@ To verify your environment is configured correctly, run the `update` CLI command
 
    ```console
    $ gh actions-importer update
-   Login Succeeded
-   latest: Pulling from actions-importer/cli
-   Digest: sha256:a7d00dee8a37e25da59daeed44b1543f476b00fa2c41c47f48deeaf34a215bbb
-   Status: Image is up to date for ghcr.io/actions-importer/cli:latest
-   ghcr.io/actions-importer/cli:latest
+    Updating ghcr.io/actions-importer/cli:latest...
+    ghcr.io/actions-importer/cli:latest up-to-date
    ```
 
 ## Run an audit on the existing Azure DevOps project
