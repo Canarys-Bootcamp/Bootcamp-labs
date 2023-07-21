@@ -14,7 +14,7 @@ This hands on lab consists of the following steps:
 
 
 ## Add Personal Access Tokens To Codespaces
-1. Work inside your current repository `Microsoft-Bootcamp/attendee-<your-github-handle>`
+1. Work inside your current repository `Canarys-Bootcamp/attendee-<your-github-handle>`
 2. Click the `Settings` tab
 3. Click `Secrets` then `Codespaces`
 4. Click `New Repository Secret`
@@ -24,7 +24,7 @@ This hands on lab consists of the following steps:
 
 
 ## Bootstrap GitHub Actions Importer into your Codespace
-1. Work inside your current repository `Microsoft-Bootcamp/attendee-<your-github-handle>`
+1. Work inside your current repository `Canarys-Bootcamp/attendee-<your-github-handle>`
 2. Open the `.devcontainer` folder
 3. Open the `devcontainer.json` file
 4. Click `Edit`
@@ -127,22 +127,22 @@ To verify your environment is configured correctly, run the `update` CLI command
   
 Now we are going to migrate one of the successful pipelines. 
 
-Now, we can run the command line and need to pass it the pipeline command. This command also requires to pass in a --target-url, which is the GitHub repo you are targeting. This is the location `https://github.com/Microsoft-Bootcamp/<your-repo-name>`.  
+Now, we can run the command line and need to pass it the pipeline command. This command also requires to pass in a --target-url, which is the GitHub repo you are targeting. This is the location `https://github.com/Canarys-Bootcamp/<your-repo-name>`.  
 
 The Bootcamps Azure DevOps pipeline's definition-id is 54.
 
 1. Navigate to the codespace terminal.
 2. Run the following command from the root directory:
 ```
-gh actions-importer migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/<your-repo-name> --pipeline-id 54 --output-dir tmp/migrate
+gh actions-importer migrate azure-devops pipeline --target-url https://github.com/Canarys-Bootcamp/<your-repo-name> --pipeline-id 54 --output-dir tmp/migrate
 ```
 
 You will find a similiar result to:
   
 ```
-@dkalmin ➜ /workspaces/attendee-dkalmin-1-17-18 (main ✗) $ gh actions-importer migrate azure-devops pipeline --target-url https://github.com/Microsoft-Bootcamp/attendee-dkalmin-1-17-18 --pipeline-id 54 --output-dir tmp/migrate
+@dkalmin ➜ /workspaces/attendee-dkalmin-1-17-18 (main ✗) $ gh actions-importer migrate azure-devops pipeline --target-url https://github.com/Canarys-Bootcamp/attendee-dkalmin-1-17-18 --pipeline-id 54 --output-dir tmp/migrate
 [2023-01-18 16:48:11] Logs: 'tmp/migrate/log/valet-20230118-164811.log'         
-[2023-01-18 16:48:17] Pull request: 'https://github.com/Microsoft-Bootcamp/attendee-dkalmin-1-17-18/pull/6'
+[2023-01-18 16:48:17] Pull request: 'https://github.com/Canarys-Bootcamp/attendee-dkalmin-1-17-18/pull/6'
 @dkalmin ➜ /workspaces/attendee-dkalmin-1-17-18 (main ✗) $ 
  ```
 
